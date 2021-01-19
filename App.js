@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components/native";
 
 // Import: Components
-import { Gallery, Text } from "./src/components";
+import { Gallery } from "./src/components";
 
 // Component: App
 export default function App() {
