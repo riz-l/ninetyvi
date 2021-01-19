@@ -3,14 +3,19 @@ import React from "react";
 import styled from "styled-components/native";
 
 // Import: Components
-import { Text } from "./src/components";
+import { Gallery, Text } from "./src/components";
 
 // Component: App
 export default function App() {
   return (
     <Container>
-      <Text color="red">Open up App.js to start working on your app!</Text>
-      <StatusBar backgroundColor="red" barStyle="light-content" />
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="light-content"
+      />
+
+      <Gallery />
     </Container>
   );
 }
