@@ -2,6 +2,9 @@
 import React from "react";
 import styled from "styled-components/native";
 
+// Import: Data
+import imageData from "./data/imageData";
+
 // Import: Components
 import { Gallery } from "./src/components";
 
@@ -15,7 +18,7 @@ export default function App() {
         barStyle="light-content"
       />
 
-      <Gallery />
+      <Gallery data={imageData} />
     </Container>
   );
 }

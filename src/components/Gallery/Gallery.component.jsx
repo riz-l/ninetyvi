@@ -1,15 +1,6 @@
 // Import: Packages
 import React from "react";
-import {
-  Animated,
-  Dimensions,
-  FlatList,
-  Image,
-  StyleSheet,
-} from "react-native";
-
-// Import: Data
-import imageData from "../../../data/imageData";
+import { Animated, Dimensions, StyleSheet } from "react-native";
 
 // Import: Elements
 import {
@@ -24,13 +15,13 @@ const imageW = width * 0.7;
 const imageH = imageW * 1.54;
 
 // Component: Gallery
-export default function Gallery() {
+export default function Gallery({ data }) {
   const scrollX = React.useRef(new Animated.Value(0)).current;
 
   return (
     <Container>
       <Background>
-        {imageData.map((image, index) => {
+        {data.map((image, index) => {
           // Accepts the values of: next, current and previous
           const inputRange = [
             (index - 1) * width,
@@ -49,7 +40,7 @@ export default function Gallery() {
             <Animated.Image
               blurRadius={35}
               key={`image-${index}`}
-              source={{ uri: image }}
+              source={image}
               style={[
                 StyleSheet.absoluteFillObject,
                 {
@@ -62,7 +53,7 @@ export default function Gallery() {
       </Background>
 
       <Animated.FlatList
-        data={imageData}
+        data={data}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { x: scrollX } } }],
           { useNativeDriver: true }
@@ -85,7 +76,7 @@ export default function Gallery() {
               }}
             >
               <CarouselImage
-                source={{ uri: item }}
+                source={item}
                 style={{ height: imageH, resizeMode: "cover", width: imageW }}
               />
             </CarouselItem>
