@@ -5,7 +5,8 @@ import styled from "styled-components/native";
 // Import: Data
 import imageData from "./data/imageData";
 
-// Import: Components
+// Import: Screens, Components
+// import { HomeScreen, Login } from "./src/screens/";
 import { Gallery } from "./src/components";
 
 // Component: App
@@ -18,6 +19,8 @@ export default function App() {
         barStyle="light-content"
       />
 
+      {/* <HomeScreen /> */}
+      {/* <LoginScreen /> */}
       <Gallery data={imageData} />
     </Container>
   );
@@ -25,10 +28,8 @@ export default function App() {
 
 // Element: Container
 const Container = styled.View`
-  align-items: center;
-  background-color: #ffffff;
+  background-color: #2a2a2e;
   flex: 1;
-  justify-content: center;
 `;
 
 // Element: StatusBar
